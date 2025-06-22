@@ -1,28 +1,29 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DLS Association of Bangladesh</title>
-  <style>
-    body { font-family: sans-serif; background: #000; color: #fff; text-align: center; padding: 2em; }
-    a { color: #0f0; text-decoration: none; }
-    .section { margin: 2em 0; }
-  </style>
-</head>
-<body>
-  <h1>⚽ DLS ASSOCIATION OF BANGLADESH ⚽</h1>
-  <p>স্বাগতম! নিচের বিভাগগুলো থেকে আপনার পছন্দের অপশন নির্বাচন করুন:</p>
-  <div class="section">
-    <a href="club-registration.html">ক্লাব রেজিস্ট্রেশন</a><br>
-    <a href="player-registration.html">প্লেয়ার রেজিস্ট্রেশন</a><br>
-    <a href="#">ডিভিশন ম্যাচ সিস্টেম</a><br>
-    <a href="#">প্লেয়ার ট্রান্সফার</a><br>
-    <a href="#">প্লেয়ার হিস্ট্রি</a><br>
-    <a href="#">ক্লাব হিস্ট্রি</a><br>
-    <a href="#">Ballon d'Or সিস্টেম</a><br>
-    <a href="#">বিশ্বকাপ সিস্টেম</a><br>
-    <a href="#">চ্যাম্পিয়নস লিগ সিস্টেম</a>
-  </div>
-</body>
-</html>
+import React from "react";
+
+export default function Home() { return ( <div className="min-h-screen bg-black text-white font-sans"> <header className="p-4 text-center border-b border-gray-700"> <h1 className="text-3xl font-bold">⚽ DLS ASSOCIATION OF BANGLADESH</h1> <p className="text-sm text-gray-400">Dream League Soccer Tournament Hub</p> </header>
+
+<main className="p-6 max-w-4xl mx-auto">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card title="ক্লাব রেজিস্ট্রেশন" link="/club-registration" />
+      <Card title="প্লেয়ার রেজিস্ট্রেশন" link="/player-registration" />
+      <Card title="ডিভিশন ম্যাচ সিস্টেম" link="/division-matches" />
+      <Card title="প্লেয়ার ট্রান্সফার" link="/transfers" />
+      <Card title="প্লেয়ার হিস্ট্রি" link="/player-history" />
+      <Card title="ক্লাব হিস্ট্রি" link="/club-history" />
+      <Card title="Ballon d'Or সিস্টেম" link="/ballon-dor" />
+      <Card title="বিশ্বকাপ সিস্টেম" link="/world-cup" />
+      <Card title="চ্যাম্পিয়নস লিগ সিস্টেম" link="/champions-league" />
+    </section>
+
+    <div className="mt-10 text-center text-sm text-gray-500">
+      &copy; 2025 DLS Association of Bangladesh. All rights reserved.
+    </div>
+  </main>
+</div>
+
+); }
+
+function Card({ title, link }) { return ( <a
+href={link}
+className="bg-white text-black p-4 rounded-2xl shadow hover:scale-105 transition transform"
+> <h2 className="text-xl font-semibold text-center">{title}</h2> </a> ); }
